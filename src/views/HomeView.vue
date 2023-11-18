@@ -1,9 +1,17 @@
 <script setup>
-import TheWelcome from '../components/TheWelcome.vue'
+
 </script>
 
 <template>
   <main>
-    <TheWelcome />
+    <h1>Hello ViteStation</h1>
   </main>
 </template>
+
+<style>
+
+h1{
+  text-align: center;
+}
+
+</style>
