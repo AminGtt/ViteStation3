@@ -28,6 +28,16 @@ npm run dev
 npm run build
 ```
 
+### Deploy to Github-pages
+
+```sh
+npm run build
+git commit
+git push
+git subtree push --prefix dist origin gh-pages
+```
+
+
 ### Run Unit Tests with [Vitest](https://vitest.dev/)
 
 ```sh
