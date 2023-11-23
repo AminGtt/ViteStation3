@@ -4,7 +4,7 @@
 
 <template>
   <main>
-    <h1>Hello ViteStation</h1>
+    <h1>Hello ViteStation3</h1>
   </main>
 </template>
 
