@@ -30,11 +30,13 @@ npm run build
 
 ### Deploy to Github-pages
 
+Once modifications has been done: (TODO : make 'npm run pages' auto commit & push?)
+
 ```sh
 npm run build
 git commit
-git push
-git subtree push --prefix dist origin gh-pages
+git push (on master)
+npm run pages (push /dist to gh-pages branch)
 ```
 
 
