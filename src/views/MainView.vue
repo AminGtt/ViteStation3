@@ -9,7 +9,7 @@ import ClockComponant from "../components/ClockComponant.vue";
 
     <main class="menu" id="menu">
         <p id="wip">
-            <router-link to="/disclaimer">Go to disclaimer</router-link>
+            <router-link to="/disclaimer">Link</router-link>
         </p>
         <section id="xmb">
 
