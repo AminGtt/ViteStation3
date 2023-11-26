@@ -8,7 +8,9 @@ import ClockComponant from "../components/ClockComponant.vue";
     <ClockComponant />
 
     <main class="menu" id="menu">
-        <p id="wip">WIP</p>
+        <p id="wip">
+            <router-link to="/disclaimer">Go to disclaimer</router-link>
+        </p>
         <section id="xmb">
 
             <ul class="xmb_col">
