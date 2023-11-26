@@ -1,4 +1,20 @@
 <script setup>
+import router from '../router';
+import { useWelcomeStore } from '../stores/WelcomeStore';
+const welcomeStore = useWelcomeStore();
+
+
+document.body.addEventListener('keydown', (e) =>{
+  if(e.key === 'Enter'){
+    e.preventDefault();
+    goNext();
+  }
+});
+
+let goNext = () => {
+  welcomeStore.changeIsValid();
+  router.push('/')
+};
 
 </script>
 
@@ -14,7 +30,7 @@
       <p>Press OK to continue.</p>
       <br>
       <br>
-      <p class="okBtn">OK</p>
+      <p class="okBtn" @keypress.enter="goNext">OK</p>
     </div>
 
     <div id="welcomerBtn">

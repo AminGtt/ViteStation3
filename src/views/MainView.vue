@@ -1,6 +1,17 @@
 <script setup>
 import SettingsComponant from '../components/SettingsComponant.vue';
 import ClockComponant from "../components/ClockComponant.vue";
+import { useWelcomeStore } from '../stores/WelcomeStore';
+// import { useRouter } from 'vue-router'
+import router from "../router/index.js";
+
+const welcomeStore = useWelcomeStore();
+
+if (welcomeStore.isWelcomeValid === false) {
+    //useRouter().push('welcome')
+    router.push('/welcome');
+}
+
 </script>
 
 <template>
