@@ -6,6 +6,7 @@
   font-weight: normal;
   position: relative;
   color: white;
+  height: 100vh;
 }
 
 @media (min-width: 1024px) {

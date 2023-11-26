@@ -1,0 +1,400 @@
+<script setup>
+
+</script>
+
+<template>
+    <main class="menu" id="menu">
+        <p id="wip">WIP</p>
+        <section id="xmb">
+
+            <ul class="xmb_col">
+                <ul class="xmb_col_header">
+                    <img src="../assets/icons/xmb_home.png" alt="xmb_home" class="xmb_col_icons">
+                    <li class="xmb_col_title">Home</li>
+                </ul>
+
+                <ul class="xmb_row active">
+                    <!-- if one row need infowrapper, the full col need infowrapper div
+                    to avoid bugs. -->
+
+                    <!-- to "activate" the infowrapper display, 
+                    "infos" class is needed in "xmb_row_content" <ul> -->
+                    <ul class="xmb_row_content focus" id="welcomeTile"> 
+                        <img src="../assets/icons/xmb_welcome.png" alt="xmb_folder" class="xmb_row_icons">
+                        <ul>
+                            <li class="xmb_row_text">Welcome!</li>
+                        </ul>
+
+                        <div class="infowrapper">
+                        </div>
+
+                        <div id="maininfo">
+                            <h1>Welcome to AminStation 3!</h1>
+                            <p>
+                                Navigate through the XMB menu using the arrow keys to have a look around. <br>
+                                Press Enter/Esc to open/close a menu. <br>
+                                You can also navigate with an Xbox controller. <br>
+                                Use the D-Pad 
+                                <span>
+                                    <img class="details_main_icon d-pad" src="../assets/icons/d-pad.png" alt="d-pad_icon">
+                                </span> 
+                                to move and 
+                                <span>
+                                    <img class="details_main_icon a-btn" src="../assets/icons/Akey_xbox_controller.png" alt="d-pad_icon">
+                                </span>
+                                /
+                                <span>
+                                    <img class="details_main_icon b-btn" src="../assets/icons/Bkey_xbox_controller.png" alt="d-pad_icon">
+                                </span> to open/close menus.
+                            </p>
+                            <p>Made by Amin Gatta</p>
+                        </div>
+
+                    </ul>
+
+                    <ul class="xmb_row_content infos">
+                        <img src="../assets/icons/user.png" alt="xmb_folder" class="xmb_row_icons">
+                        <ul>
+                            <li class="xmb_row_text">Who am I?</li>
+                        </ul>
+
+                        <div class="infowrapper">
+                            <h1>Test</h1>
+                            <p>Toto tata</p>
+                        </div>
+                    </ul>
+                </ul>
+            </ul>
+
+            <ul class="xmb_col">
+                <ul class="xmb_col_header">
+                    <img src="../assets/icons/xmb_skills.png" alt="xmb_contact" class="xmb_col_icons">
+                    <li class="xmb_col_title">Compétences</li>
+                </ul>
+
+                <ul class="xmb_row">
+                    <ul class="xmb_row_content ">
+                        <img src="../assets/icons/xmb_angular.png" alt="xmb_folder" class="xmb_row_icons">
+                        <ul>
+                            <li class="xmb_row_text">Angular</li>
+                            <li class="xmb_row_info">My Angular skills</li>
+                        </ul>
+
+                        <div class="infowrapper">
+                        </div>
+                    </ul>
+
+
+                    <ul class="xmb_row_content ">
+                        <img src="../assets/icons/xmb_symfony.png" alt="xmb_folder" class="xmb_row_icons">
+                        <ul>
+                            <li class="xmb_row_text">Symfony</li>
+                            <li class="xmb_row_info">My Symfony skills</li>
+                        </ul>
+                        
+                        <div class="infowrapper">
+                        </div>
+                    </ul>
+
+
+                    <ul class="xmb_row_content infos">
+                        <img src="../assets/icons/xmb_docker.png" alt="xmb_folder" class="xmb_row_icons">
+                        <ul>
+                            <li class="xmb_row_text">Docker</li>
+                            <li class="xmb_row_info">My Docker skills</li>
+                        </ul>
+
+                        <div class="infowrapper">
+                            <h1>Test</h1>
+                            <p>Toto tata</p>
+                        </div>
+                    </ul>
+                    <ul class="xmb_row_content ">
+                        <img src="../assets/icons/xmb_vr.png" alt="xmb_folder" class="xmb_row_icons">
+                        <ul>
+                            <li class="xmb_row_text">WebXR</li>
+                            <li class="xmb_row_info">My VR/AR skills</li>
+                        </ul>
+
+                        <div class="infowrapper">
+                        </div>
+                    </ul>
+                </ul>
+            </ul>
+
+            <ul class="xmb_col">
+                <ul class="xmb_col_header">
+                    <img src="../assets/icons/xmb_projects.png" alt="xmb_projects" class="xmb_col_icons">
+                    <li class="xmb_col_title">Projets</li>
+                </ul>
+
+                <ul class="xmb_row">
+                    <ul class="xmb_row_content infos">
+                        <img src="../assets/icons/xmb_folder.png" alt="xmb_folder" class="xmb_row_icons">
+                        <ul>
+                            <li class="xmb_row_text">ISS live tracker</li>
+                            <li class="xmb_row_info">Angular/TypeScript/Scss</li>
+                        </ul>
+                        
+
+                        <div class="infowrapper">
+                            <h1>Test</h1>
+                            <p>Toto tata</p>
+                        </div>
+                    </ul>
+
+                    <ul class="xmb_row_content">
+                        <img src="../assets/icons/xmb_folder.png" alt="xmb_folder" class="xmb_row_icons">
+                        <ul>
+                            <li class="xmb_row_text">Projet 2</li>
+                            <li class="xmb_row_info">My wonderfull project</li>
+                        </ul>
+                        
+                        <div class="infowrapper">
+                        </div>
+                    </ul>
+
+
+                    <ul class="xmb_row_content infos">
+                        <img src="../assets/icons/xmb_folder.png" alt="xmb_folder" class="xmb_row_icons">
+                        <ul>
+                            <li class="xmb_row_text">Projet 3</li>
+                            <li class="xmb_row_info">My wonderfull project</li>
+                        </ul>
+                        
+                        <div class="infowrapper">
+                            <h1>Test</h1>
+                            <p>Toto tata</p>
+                        </div>
+                    </ul>
+
+
+                    <ul class="xmb_row_content">
+                        <img src="../assets/icons/xmb_folder.png" alt="xmb_folder" class="xmb_row_icons">
+                        <ul>
+                            <li class="xmb_row_text">Projet 4</li>
+                            <li class="xmb_row_info">My wonderfull project</li>
+                        </ul>
+                        
+                        <div class="infowrapper">
+                        </div>
+                    </ul>
+
+                </ul>
+            </ul>
+
+            <ul class="xmb_col">
+                <ul class="xmb_col_header">
+                    <img src="../assets/icons/xmb_contact.png" alt="xmb_contact" class="xmb_col_icons">
+                    <li class="xmb_col_title">Contacts</li>
+                </ul>
+
+                <ul class="xmb_row">
+                    <ul class="xmb_row_content social">
+                        <img src="../assets/icons/xmb_linkedin.png" alt="xmb_folder" class="xmb_row_icons">
+                        <ul>
+                            <li class="xmb_row_text">
+                                <a hidden href="https://www.linkedin.com/in/amin-gatta-4547a41b7/"></a>
+                                Linkedin
+                            </li>
+                            <li class="xmb_row_info">Add me &#128512;</li>
+                        </ul>
+                    </ul>
+
+                    <ul class="xmb_row_content social">
+                        <img src="../assets/icons/xmb_github.png" alt="xmb_folder" class="xmb_row_icons">
+                        <ul>
+                            <li class="xmb_row_text">
+                                <a hidden href="https://github.com/AminGtt"></a>
+                                Github
+                            </li>
+                            <li class="xmb_row_info">My amazing code</li>
+                        </ul>
+                    </ul>
+
+                    <ul class="xmb_row_content social">
+                        <img src="../assets/icons/contact_me.png" alt="xmb_folder" class="xmb_row_icons">
+                        <ul>
+                            <li class="xmb_row_text">
+                                <a hidden href="mailto:gatta.amin38@gmail.com"></a>
+                                Mail
+                            </li>
+                            <li class="xmb_row_info">Wanna mail me?</li>
+                        </ul>
+                    </ul>
+                </ul>
+            </ul>
+
+            <ul class="xmb_col">
+                <ul class="xmb_col_header">
+                    <img src="../assets/icons/xmb_settings.png" alt="xmb_settings" class="xmb_col_icons">
+                    <li class="xmb_col_title">Settings</li>
+                </ul>
+
+                <ul class="xmb_row">
+                    <ul class="xmb_row_content settings">
+                        <img src="../assets/icons/bg_settings.png" alt="xmb_folder" class="xmb_row_icons">
+                        <ul>
+                            <li class="xmb_row_text">Theme Settings</li>
+                            <li class="xmb_row_info">Adjust theme settings</li>
+                        </ul>
+                    </ul>
+
+                    <ul class="xmb_row_content settings">
+                        <img src="../assets/icons/sound_settings.png" alt="xmb_folder" class="xmb_row_icons">
+                        <ul>
+                            <li class="xmb_row_text">Sounds Settings</li>
+                            <li class="xmb_row_info">Adjust sounds settings</li>
+                        </ul>
+                    </ul>
+
+                    <ul class="xmb_row_content settings">
+                        <img src="../assets/icons/xmb_date_settings.png" alt="xmb_folder" class="xmb_row_icons">
+                        <ul>
+                            <li class="xmb_row_text">Date & time</li>
+                            <li class="xmb_row_info">Adjust date & time settings</li>
+                        </ul>
+                    </ul>
+                </ul>
+            </ul>
+
+        </section>
+        <aside id="settingswrapper">
+
+            <!-- At the end this part will be pushed in js depending the article -->
+
+            <article id="themeSettings">
+                <section>
+                    <label class="themeSelector" for="colorSelector">Color:</label>
+                    <select hidden name="colorSelector" id="colorSelector">
+                        <option value="37,89,179">Sapphire</option>
+                        <option value="104,107,108">Silk</option>
+                        <option value="26,115,115">Turquoise</option>
+                        <option value="20,101,50">Emerald</option>
+                        <option value="160,120,0">Gold</option>
+                        <option value="116,15,48">Ruby</option>
+                        <option value="118,6,135">Amethyst</option>
+                        <option value="192,114,40">Amber</option>
+                    </select>
+    
+                    <div class="themewrapper">
+                        <img src="../assets/icons/colors/sapphire.png" alt="sapphire_icon">
+                        <p>Sapphire</p>
+                    </div>
+    
+                    <div class="themewrapper">
+                        <img src="../assets/icons/colors/silk.png" alt="silk_icon">
+                        <p>Silk</p>
+                    </div>
+    
+                    <div class="themewrapper">
+                        <img src="../assets/icons/colors/turquoise.png" alt="turquoise_icon">
+                        <p>Turquoise</p>
+                    </div>
+    
+                    <div class="themewrapper">
+                        <img src="../assets/icons/colors/emerald.png" alt="emerald_icon">
+                        <p>Emerald</p>
+                    </div>
+    
+                    <div class="themewrapper">
+                        <img src="../assets/icons/colors/gold.png" alt="gold_icon">
+                        <p>Gold</p>
+                    </div>
+    
+                    <div class="themewrapper">
+                        <img src="../assets/icons/colors/ruby.png" alt="ruby_icon">
+                        <p>Ruby</p>
+                    </div>
+    
+                    <div class="themewrapper">
+                        <img src="../assets/icons/colors/amethyst.png" alt="amethyst_icon">
+                        <p>Amethyst</p>
+                    </div>
+    
+                    <div class="themewrapper">
+                        <img src="../assets/icons/colors/amber.png" alt="amber_icon">
+                        <p>Amber</p>                
+                    </div>
+    
+                </section>
+                
+                <section>
+                    <label class="themeSelector" for="particlesSelector">Particles:</label>
+                    <input hidden type="checkbox" id="particlesSelector" name="particlesSelector" checked>
+                    <div class="themewrapper">
+                        <p id="onbtn">ON</p>
+                        <p id="offbtn">OFF</p>
+                    </div>
+                </section>
+        
+                <section>
+                    <label class="themeSelector" for="brightnessSelector">Brightness:</label>
+                    <input hidden type="range" id="brightnessSelector" name="brightnessSelector" min="0.05" max="1.35" step="0.1" value="1.15">
+                    
+                    <div class="brightnessTriggers">
+                        <div class="themewrapper">
+                            <p id="rm_bright"> - </p>
+                        </div>
+                        /
+                        <div class="themewrapper">
+                            <p id="add_bright"> + </p>
+                        </div>
+                    </div>
+
+                </section>
+            </article>
+
+            <article id="soundSettings">
+                <section>
+                    <label for="soundSelector">Sounds:</label>
+                    <input hidden type="checkbox" id="soundSelector" name="soundSelector" checked>
+                    <div class="soundwrapper">
+                        <p id="onbtnsound">ON</p>
+                        <p id="offbtnsound">OFF</p>
+                    </div>
+                </section>
+            </article>
+
+            <article id="dateSettings">
+
+                <section>
+                    <label for="dateSelector">Date format :</label>                
+                    <select hidden name="dateSelector" id="dateSelector">
+                        <option value="dd:mm:yyyy">FR</option>
+                        <option value="dd:mm:yyyy">US</option>
+                    </select>
+
+                    <div class="datewrapper">
+                        <p>dd:mm</p>
+                    </div>
+
+                    <div class="datewrapper">
+                        <p>mm:dd</p>
+                    </div>
+                </section>
+
+                <section>
+                    <label for="timeSelector">Time format :</label>                
+                    <select hidden name="timeSelector" id="timeSelector">
+                        <option>12</option>
+                        <option>24</option>
+                    </select>
+
+                    <div class="datewrapper">
+                        <p>12</p>
+                    </div>
+
+                    <div class="datewrapper">
+                        <p>24</p>
+                    </div>
+                </section>
+
+            </article>
+        </aside>
+    </main>
+</template>
+
+<style>
+
+</style>
