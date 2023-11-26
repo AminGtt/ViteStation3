@@ -10,7 +10,7 @@
     "test:e2e": "playwright test",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore",
     "format": "prettier --write src/",
-    "pages": "git subtree push --prefix dist origin gh-pages"
+    "pages": "npm run build && git add . && git commit -m 'update Github pages' && git push && git subtree push --prefix dist origin gh-pages"
   },
   "dependencies": {
     "pinia": "^2.1.7",

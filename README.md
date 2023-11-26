@@ -30,15 +30,12 @@ npm run build
 
 ### Deploy to Github-pages
 
-Once modifications has been done: (TODO : make 'npm run pages' auto commit & push?)
+Once modifications has been done & pushed
 
 ```sh
-npm run build
-git commit
-git push (on master)
-npm run pages (push /dist to gh-pages branch)
+npm run pages
 ```
-
+This will build-commit-push_master-push_dist_to_gh_pages 
 
 ### Run Unit Tests with [Vitest](https://vitest.dev/)
 

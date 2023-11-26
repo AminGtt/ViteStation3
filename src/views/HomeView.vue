@@ -4,7 +4,8 @@
 
 <template>
   <main>
-    <h1>Hello ViteStation3</h1>
+    <h1>Hello World</h1>
+    <p>Welcome on ViteStation3</p>
   </main>
 </template>
 
