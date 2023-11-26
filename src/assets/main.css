@@ -1,6 +1,8 @@
 @import './base.css';
 
 *{
+  margin: 0;
+  padding: 0;
   font-family: 'Arial';
 }
 
@@ -15,6 +17,15 @@
   overflow: hidden;
   color: whitesmoke;
   user-select: none;
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 1px #d3d3d3, 0 0 2px #acacac, 0 0 2px #b1afaf, 0 0 5px #9b9b9b;
+  }
+  to {
+    text-shadow: 0 0 5px #dfdfdf, 0 0 8px #c9c9c9, 0 0 15px #b6b6b4, 0 0 20px #b9b9b9;
+  }
 }
 
 @media (min-width: 1024px) {

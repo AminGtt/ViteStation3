@@ -9,6 +9,34 @@
     </section>
 </template>
 
-<style>
+<style scoped lang="scss">
+
+#disclaimer{
+    //opacity: 0;
+    color: #dadada;
+    text-shadow: 2px 2px 5px black;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(10px);
+    transition: ease 1000ms;
+
+    #disclaimerHead{
+        margin-top: 25%;
+        margin-left: 20%;
+    }
+    p{  
+        position: relative;
+        margin: revert;
+        top: 50%;
+        left: 50%;
+        transform: translate(-75%, -50%);
+        margin-top: -10px;
+        margin-left: 20%;
+        width: 65%;
+        text-transform: uppercase;
+        font-size: 1.1rem;
+    }
+}
 
 </style>

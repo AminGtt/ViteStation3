@@ -25,7 +25,7 @@
   </section>
 </template>
 
-<style lang="scss">
+<style scoped lang="scss">
 
 #welcomer{
     position: relative;
@@ -71,6 +71,10 @@
     left: 0;
     box-shadow: 0 0 5px #dfdfdf, 0 0 8px #ffffff, 0 0 15px #b6b6b4, 0 0 20px #b9b9b9;
     
+}
+
+.okBtn{
+    animation: glow 1s ease-in-out infinite alternate;
 }
 
 </style>
