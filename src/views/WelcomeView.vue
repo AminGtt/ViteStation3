@@ -1,19 +1,24 @@
 <script setup>
 import router from '../router';
 import { useWelcomeStore } from '../stores/WelcomeStore';
-const welcomeStore = useWelcomeStore();
 
+// import startupSound from "@/assets/sounds/startup.mp3"
+const startupSound = new Audio('./src/assets/sounds/startup.mp3');
+
+const welcomeStore = useWelcomeStore();
 
 document.body.addEventListener('keydown', (e) =>{
   if(e.key === 'Enter'){
     e.preventDefault();
+
+    startupSound.play();
     goNext();
   }
 });
 
-let goNext = () => {
+const goNext = () => {
   welcomeStore.changeIsValid();
-  router.push('/')
+  router.push('/disclaimer')
 };
 
 </script>

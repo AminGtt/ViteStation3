@@ -6,11 +6,13 @@ import { createPinia } from 'pinia'
 import App from './App.vue'
 import router from './router'
 
-import Clock from './components/ClockComponant.vue'
+import ClockComponent from './components/ClockComponent.vue'
+import SettingsComponent from './components/SettingsComponent.vue'
 
 const app = createApp(App)
 
-app.component("ClockComponant", Clock)
+app.component("ClockComponent", ClockComponent)
+app.component("SettingsComponent", SettingsComponent)
 
 app.use(createPinia())
 app.use(router)

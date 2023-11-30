@@ -1,4 +1,10 @@
 <script setup>
+import router from '../router';
+
+
+setTimeout(() => {
+    router.push('/')
+}, 1000);
 
 </script>
 

@@ -1,26 +1,68 @@
 <script setup>
-import SettingsComponant from '../components/SettingsComponant.vue';
-import ClockComponant from "../components/ClockComponant.vue";
 import { useWelcomeStore } from '../stores/WelcomeStore';
-// import { useRouter } from 'vue-router'
-import router from "../router/index.js";
+// import { useRouter } from 'vue-router' ---- Keep this as exemple of useRouter()
+import router from "../router";
 
 const welcomeStore = useWelcomeStore();
+const navSound = new Audio('./src/assets/sounds/nav.mp3');
+
+const playNavSound = () => {
+    navSound.cloneNode(true).play();
+};
 
 if (welcomeStore.isWelcomeValid === false) {
-    //useRouter().push('welcome')
+    //useRouter().push('welcome') ---- Keep this as exemple of useRouter()
     router.push('/welcome');
-}
+};
+
+document.body.addEventListener('keydown', (e) =>{
+    if(e.key === 'ArrowRight'){
+        playNavSound();
+        e.preventDefault();
+        
+        //right();
+    }
+    else if(e.key === 'ArrowLeft'){
+        playNavSound();
+        e.preventDefault();
+        
+        //left();
+    }
+    else if(e.key === 'ArrowDown'){
+        playNavSound();
+        e.preventDefault();
+
+        //down();
+    }
+    else if(e.key === 'ArrowUp'){
+        playNavSound();
+        e.preventDefault();
+
+        //up();
+    }
+    else if(e.key === 'Enter'){
+        playNavSound();
+        e.preventDefault();
+        
+        //open();
+    }
+    else if(e.key === 'Escape'){
+        playNavSound();
+        e.preventDefault();
+        
+        //close();
+    }
+});
 
 </script>
 
 <template>
 
-    <ClockComponant />
+    <ClockComponent />
 
     <main class="menu" id="menu">
         <p id="wip">
-            <router-link to="/disclaimer">Link</router-link>
+            WIP
         </p>
         <section id="xmb">
 
@@ -276,7 +318,7 @@ if (welcomeStore.isWelcomeValid === false) {
             </ul>
         </section>
 
-        <SettingsComponant />
+        <SettingsComponent />
     </main>
 </template>
 
