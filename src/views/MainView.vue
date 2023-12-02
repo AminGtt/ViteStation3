@@ -2,55 +2,79 @@
 import { useWelcomeStore } from '../stores/WelcomeStore';
 // import { useRouter } from 'vue-router' ---- Keep this as exemple of useRouter()
 import router from "../router";
+import { useEventListener } from '@vueuse/core';
 
 const welcomeStore = useWelcomeStore();
-const navSound = new Audio('./src/assets/sounds/nav.mp3');
-
-const playNavSound = () => {
-    navSound.cloneNode(true).play();
-};
-
 if (welcomeStore.isWelcomeValid === false) {
     //useRouter().push('welcome') ---- Keep this as exemple of useRouter()
     router.push('/welcome');
 };
 
-document.body.addEventListener('keydown', (e) =>{
+const navSound = new Audio('./src/assets/sounds/nav.mp3');
+const playNavSound = () => {
+    navSound.cloneNode(true).play();
+};
+
+let right = () => {
+    console.log('right');
+},
+
+left = () => {
+    console.log('left');
+},
+
+down = () => {
+    console.log('down');
+},
+
+up = () => {
+    console.log('up');
+},
+
+open = () => {
+    console.log('open');
+},
+
+close = () => {
+    console.log('close');
+}
+
+useEventListener(document.body, 'keydown', (e) => {
     if(e.key === 'ArrowRight'){
         playNavSound();
         e.preventDefault();
         
-        //right();
+        right();
     }
     else if(e.key === 'ArrowLeft'){
         playNavSound();
         e.preventDefault();
         
-        //left();
+        left();
     }
     else if(e.key === 'ArrowDown'){
         playNavSound();
         e.preventDefault();
 
-        //down();
+        down();
     }
     else if(e.key === 'ArrowUp'){
         playNavSound();
         e.preventDefault();
 
-        //up();
+        up();
     }
     else if(e.key === 'Enter'){
         playNavSound();
         e.preventDefault();
         
-        //open();
+        open();
     }
     else if(e.key === 'Escape'){
         playNavSound();
         e.preventDefault();
         
-        //close();
+        close();
     }
 });
 

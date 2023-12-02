@@ -1,4 +1,5 @@
 <script setup>
+import { useEventListener } from '@vueuse/core'
 import router from '../router';
 import { useWelcomeStore } from '../stores/WelcomeStore';
 
@@ -7,7 +8,7 @@ const startupSound = new Audio('./src/assets/sounds/startup.mp3');
 
 const welcomeStore = useWelcomeStore();
 
-document.body.addEventListener('keydown', (e) =>{
+useEventListener(document.body, 'keydown', (e) => {
   if(e.key === 'Enter'){
     e.preventDefault();
 
