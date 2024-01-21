@@ -11,7 +11,7 @@
     "test:e2e": "playwright test",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore",
     "format": "prettier --write src/",
-    "pages": "npm run build && git add . && git commit -m 'update Github pages' && git push && git subtree push --prefix dist origin gh-pages"
+    "deploy": "npm run build && git add . && git commit -m 'New prod version' && git push && git subtree push --prefix dist origin prod"
   },
   "dependencies": {
     "@vueuse/core": "^10.6.1",

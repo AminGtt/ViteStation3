@@ -19,6 +19,17 @@
   user-select: none;
 }
 
+.details_icon, .details_main_icon{
+  height: 30px;
+  width: 30px;
+  margin-right: 10px;
+}
+
+.xbox_key_icon{
+  position: absolute;
+  opacity: 0;
+}
+
 @keyframes glow {
   from {
     text-shadow: 0 0 1px #d3d3d3, 0 0 2px #acacac, 0 0 2px #b1afaf, 0 0 5px #9b9b9b;

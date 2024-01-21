@@ -1,4 +1,21 @@
 <script setup>
+import { onMounted } from 'vue';
+
+onMounted(() => {
+    updateClock()
+})
+let date
+function updateClock() {
+    date = new Date
+    let dateLocation = document.querySelector('#date')
+
+    dateLocation.innerText = date.toLocaleTimeString() + ' ' + date.toLocaleDateString(navigator.language, {year: '2-digit', month: 'numeric'})
+
+    setTimeout(
+        updateClock,
+        1000
+    )
+}
 
 </script>
 
@@ -6,7 +23,7 @@
     <section id="clock">
         <div class="clock-container">
             <div id="trophy">
-                <img src="../assets/icons/xmb_trophy.png" alt="trophy_icon" id="trophy_icon">
+                <img src="../assets/icons/xmb-icons/games/xmb-games-trophy.png" alt="trophy_icon" id="trophy_icon">
                 <p id="score">0</p>
             </div>
             <p id="date"></p>

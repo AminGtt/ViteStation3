@@ -8,5 +8,8 @@ export const useWelcomeStore = defineStore('welcome', () => {
         isWelcomeValid.value = !isWelcomeValid.value;
     }
 
-    return {isWelcomeValid, changeIsValid}
+    return {
+        isWelcomeValid,
+        changeIsValid
+    }
 })

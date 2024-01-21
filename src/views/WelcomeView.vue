@@ -1,6 +1,6 @@
 <script setup>
 import { useEventListener } from '@vueuse/core'
-import router from '../router';
+import router from '../router/router';
 import { useWelcomeStore } from '../stores/WelcomeStore';
 
 // import startupSound from "@/assets/sounds/startup.mp3"
@@ -17,7 +17,7 @@ useEventListener(document.body, 'keydown', (e) => {
   }
 });
 
-const goNext = () => {
+function goNext() {
   welcomeStore.changeIsValid();
   router.push('/disclaimer')
 };
@@ -25,6 +25,7 @@ const goNext = () => {
 </script>
 
 <template>
+
   <section id="welcomer">
     <div id="welcomerText">
       <p>Welcome,</p>
@@ -36,15 +37,16 @@ const goNext = () => {
       <p>Press OK to continue.</p>
       <br>
       <br>
-      <p class="okBtn" @keypress.enter="goNext">OK</p>
+      <p class="okBtn" @keypress.enter="goNext()">OK</p>
     </div>
 
     <div id="welcomerBtn">
       <img class="details_icon" src="../assets/icons/enterkey.png" alt="enterKey">
-      <img class="details_icon xbox_key_icon" src="../assets/icons/Akey_xbox_controller.png" alt="Akey_xbox_controller">
+      <img class="details_icon xbox_key_icon" src="../assets/icons/xbox-keys/Akey_xbox_controller.png" alt="Akey_xbox_controller">
       <p>Valider</p>
     </div>
   </section>
+  
 </template>
 
 <style scoped lang="scss">
