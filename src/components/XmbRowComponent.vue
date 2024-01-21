@@ -4,7 +4,7 @@ import { useSelectedIndexStore } from '../stores/SelectedIndexStore';
 
 
 const selectedIndexStore = useSelectedIndexStore();
-const props = defineProps(['row', 'index'])
+const props = defineProps(['row', 'index', 'currentCol'])
 
 onUpdated(() => {
 
@@ -14,7 +14,7 @@ onUpdated(() => {
 
 <template>
     <ul class="xmb_row" id="welcomeTile" :class="{focus: props.index == selectedIndexStore.selectedRowIndex}">
-        <img src="../assets/icons/xmb-icons/home/xmb-user.png" alt="xmb_folder" class="xmb_row_icons">
+        <img :src="'/src/assets/icons/xmb-icons/'+props.currentCol+'/xmb-'+props.currentCol+'-'+props.row.icon+'.png'" alt="xmb_folder" class="xmb_row_icons">
         <ul>
             <li class="xmb_row_text">{{ props.row.text }}</li>
             <li class="xmb_row_info" v-if="props.row.info">{{ props.row.info }}</li>
