@@ -3,7 +3,8 @@ import { ref } from 'vue'
 
 export const useSelectedIndexStore = defineStore('selectedIndex', () => {
     const selectedRowIndex = ref(0),
-    selectedColIndex = ref(0);
+    selectedColIndex = ref(0),
+    locked = ref(true);
 
     function changeRowIndex(sign, maxRowForCurrentCol) {
         if (sign == '-' && selectedRowIndex.value > 0) {
@@ -26,6 +27,7 @@ export const useSelectedIndexStore = defineStore('selectedIndex', () => {
     return {
         selectedRowIndex,
         selectedColIndex,
+        locked,
         changeRowIndex,
         changeColIndex,
     }

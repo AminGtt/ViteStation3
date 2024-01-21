@@ -1,34 +1,31 @@
 <script setup>
-import { onUpdated } from 'vue';
 import { useSelectedIndexStore } from '../stores/SelectedIndexStore';
 
 
 const selectedIndexStore = useSelectedIndexStore();
 const props = defineProps(['row', 'index', 'currentCol'])
 
-onUpdated(() => {
-
-})
+let iconPath = props.currentCol.split(' ').join('')
 
 </script>
 
 <template>
     <ul class="xmb_row" id="welcomeTile" :class="{focus: props.index == selectedIndexStore.selectedRowIndex}">
-        <img :src="'/src/assets/icons/xmb-icons/'+props.currentCol+'/xmb-'+props.currentCol+'-'+props.row.icon+'.png'" alt="xmb_folder" class="xmb_row_icons">
+        <img :src="'/src/assets/icons/xmb-icons/'+iconPath+'/xmb-'+iconPath+'-'+props.row.icon+'.png'" alt="xmb_folder" class="xmb_row_icons">
         <ul>
             <li class="xmb_row_text">{{ props.row.text }}</li>
             <li class="xmb_row_info" v-if="props.row.info">{{ props.row.info }}</li>
         </ul>
 
-        <div class="infowrapper" v-if="props.row != 'Power'">
+        <div class="infowrapper" v-if="props.row.text != 'Power'">
         </div>
 
-        <div id="maininfo" v-if="props.row == 'Power'">
-            <h1>Welcome to AminStation 3!</h1>
+        <div id="maininfo" v-if="props.row.text == 'Power' && selectedIndexStore.selectedRowIndex == 0">
+            <h1>Welcome to ViteStation 3!</h1>
             <p>
                 Navigate through the XMB menu using the arrow keys to have a look around. <br>
-                Press Enter/Esc to open/close a menu. <br>
-                You can also navigate with an Xbox controller. <br>
+                <!-- Press Enter/Esc to open/close a menu. <br> -->
+                <!-- You can also navigate with an Xbox controller. <br>
                 Use the D-Pad
                 <span>
                     <img class="details_main_icon d-pad" src="../assets/icons/xbox-keys/d-pad.png" alt="d-pad_icon">
@@ -36,15 +33,15 @@ onUpdated(() => {
                 to move and
                 <span>
                     <img class="details_main_icon a-btn" src="../assets/icons/xbox-keys/Akey_xbox_controller.png"
-                        alt="d-pad_icon">
+                        alt="xbox_A_icon">
                 </span>
                 /
                 <span>
                     <img class="details_main_icon b-btn" src="../assets/icons/xbox-keys/Bkey_xbox_controller.png"
-                        alt="d-pad_icon">
-                </span> to open/close menus.
+                        alt="xbox_B_icon">
+                </span> to open/close menus. -->
             </p>
-            <p>Made by Amin Gatta</p>
+            <p>Made with 💖 by Amin Gatta</p>
         </div>
 
     </ul>
@@ -107,7 +104,7 @@ ul {
 }
 
 #maininfo{
-    opacity: 0;
+    // opacity: 0;
     position: absolute;
     width: 350%;
     height: auto;

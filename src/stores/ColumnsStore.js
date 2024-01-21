@@ -8,7 +8,8 @@ export const useColumnsStore = defineStore('columns', () => {
         'musics',
         'videos',
         'games',
-        'web',
+        'internet',
+        'playstation network',
         'contacts'
     ];
 

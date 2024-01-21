@@ -8,14 +8,18 @@ const selectedIndexStore = useSelectedIndexStore();
 
 const props = defineProps(['wantedCol', 'index'])
 
+let iconPath = props.wantedCol.split(' ').join('');
+
 </script>
 
 <template>
     <ul class="xmb_col">
         <ul class="xmb_col_header">
-            <img :src='`./src/assets/icons/xmb-icons/`+props.wantedCol+`/xmb-`+props.wantedCol+`.png`' alt="xmb_home" class="xmb_col_icons">
+            <img :src='`./src/assets/icons/xmb-icons/`+iconPath+`/xmb-`+iconPath+`.png`' alt="xmb_home" class="xmb_col_icons">
 
-            <li class="xmb_col_title">{{props.wantedCol.charAt(0).toUpperCase()+props.wantedCol.slice(1)}}</li>
+            <li class="xmb_col_title" :class="{active: props.index == selectedIndexStore.selectedColIndex}">
+                {{props.wantedCol.charAt(0).toUpperCase()+props.wantedCol.slice(1)}}
+            </li>
         </ul>
             
         <XmbColBody :class="{active: props.index == selectedIndexStore.selectedColIndex}" :wantedRow="props.wantedCol"/>
@@ -50,8 +54,10 @@ const props = defineProps(['wantedCol', 'index'])
 }
 
 .xmb_col_title{
-    //visibility: hidden;
+    visibility: hidden;
     font-size: 18px;
+    max-width: 90px;
+    text-align: center;
 }
 
 .active{
