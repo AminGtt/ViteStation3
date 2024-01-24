@@ -2,9 +2,9 @@
 import { useEventListener } from '@vueuse/core'
 import router from '../router/router';
 import { useWelcomeStore } from '../stores/WelcomeStore';
+import startupSoundUrl from '../assets/sounds/startup.mp3'
 
-// import startupSound from "@/assets/sounds/startup.mp3"
-const startupSound = new Audio('./src/assets/sounds/startup.mp3');
+const startupSound = new Audio(startupSoundUrl);
 
 const welcomeStore = useWelcomeStore();
 
@@ -41,8 +41,8 @@ function goNext() {
     </div>
 
     <div id="welcomerBtn">
-      <img class="details_icon" src="../assets/icons/enterkey.png" alt="enterKey">
-      <img class="details_icon xbox_key_icon" src="../assets/icons/xbox-keys/Akey_xbox_controller.png" alt="Akey_xbox_controller">
+      <img class="details_icon" src="/enterkey.png" alt="enterKey">
+      <img class="details_icon xbox_key_icon" src="/xbox-keys/Akey_xbox_controller.png" alt="Akey_xbox_controller">
       <p>Valider</p>
     </div>
   </section>

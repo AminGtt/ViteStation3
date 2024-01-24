@@ -12,6 +12,8 @@ import XmbColumn from '../components/XmbColumnComponent.vue'
 import Clock from '../components/ClockComponent.vue'
 import { onMounted } from "vue";
 
+import navSoundUrl from '../assets/sounds/nav.mp3'
+
 const welcomeStore = useWelcomeStore(),
 selectedIndexStore = useSelectedIndexStore(),
 columnsStore = useColumnsStore(),
@@ -23,7 +25,7 @@ if (welcomeStore.isWelcomeValid === false) {
     router.push('/welcome');
 };
 
-const navSound = new Audio('./src/assets/sounds/nav.mp3');
+const navSound = new Audio(navSoundUrl);
 
 let xmbMenu = '',
 xmbCols = '',
@@ -116,10 +118,11 @@ function close() {
 }
 
 function moveRows(sign, maxRowsForCurrentCol) {
-
     if (sign == '-' && selectedIndexStore.selectedRowIndex < maxRowsForCurrentCol-1 ) {
+        document.querySelectorAll('.xmb_col')[selectedIndexStore.selectedColIndex].querySelectorAll('.xmb_row')[selectedIndexStore.selectedRowIndex].style.top = '-220px';
         topValRow -= 110
     } else if (sign == '+' &&  selectedIndexStore.selectedRowIndex > 0 ) {
+        document.querySelectorAll('.xmb_col')[selectedIndexStore.selectedColIndex].querySelectorAll('.xmb_row')[selectedIndexStore.selectedRowIndex-1].style.top = '0px';
         topValRow += 110
     }
 
@@ -127,6 +130,10 @@ function moveRows(sign, maxRowsForCurrentCol) {
 }
 
 function moveMenu(sign, maxCol) {
+    //console.log(document.querySelectorAll('.xmb_col')[selectedIndexStore.selectedColIndex].querySelectorAll('.xmb_row'));
+    for (let row of document.querySelectorAll('.xmb_col')[selectedIndexStore.selectedColIndex].querySelectorAll('.xmb_row')){
+        row.style.top = '0px'
+    }
 
     topValRow = 0
 

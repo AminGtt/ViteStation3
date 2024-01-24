@@ -23,7 +23,7 @@ function updateClock() {
     <section id="clock">
         <div class="clock-container">
             <div id="trophy">
-                <img src="../assets/icons/clock-trophy.png" alt="trophy_icon" id="trophy_icon">
+                <img src="/clock-trophy.png" alt="trophy_icon" id="trophy_icon">
                 <p id="score">0</p>
             </div>
             <p id="date"></p>

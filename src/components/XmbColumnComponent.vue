@@ -3,19 +3,18 @@ import { useSelectedIndexStore } from '../stores/SelectedIndexStore';
 
 import XmbColBody from './XmbColBodyComponent.vue'
 
+const props = defineProps(['wantedCol', 'index'])
 const selectedIndexStore = useSelectedIndexStore();
 
 
-const props = defineProps(['wantedCol', 'index'])
-
-let iconPath = props.wantedCol.split(' ').join('');
+let parsedColName = props.wantedCol.split(' ').join('');
 
 </script>
 
 <template>
     <ul class="xmb_col">
         <ul class="xmb_col_header">
-            <img :src='`./src/assets/icons/xmb-icons/`+iconPath+`/xmb-`+iconPath+`.png`' alt="xmb_home" class="xmb_col_icons">
+            <img :src='`/xmb-icons/`+parsedColName+`/xmb-`+parsedColName+`.png`' alt="xmb_home" class="xmb_col_icons">
 
             <li class="xmb_col_title" :class="{active: props.index == selectedIndexStore.selectedColIndex}">
                 {{props.wantedCol.charAt(0).toUpperCase()+props.wantedCol.slice(1)}}

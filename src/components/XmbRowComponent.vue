@@ -11,7 +11,7 @@ let iconPath = props.currentCol.split(' ').join('')
 
 <template>
     <ul class="xmb_row" id="welcomeTile" :class="{focus: props.index == selectedIndexStore.selectedRowIndex}">
-        <img :src="'/src/assets/icons/xmb-icons/'+iconPath+'/xmb-'+iconPath+'-'+props.row.icon+'.png'" alt="xmb_folder" class="xmb_row_icons">
+        <img :src="'/xmb-icons/'+iconPath+'/xmb-'+iconPath+'-'+props.row.icon+'.png'" alt="xmb_folder" class="xmb_row_icons">
         <ul>
             <li class="xmb_row_text">{{ props.row.text }}</li>
             <li class="xmb_row_info" v-if="props.row.info">{{ props.row.info }}</li>
