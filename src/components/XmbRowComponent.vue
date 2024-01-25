@@ -17,13 +17,11 @@ let iconPath = props.currentCol.split(' ').join('')
             <li class="xmb_row_info" v-if="props.row.info">{{ props.row.info }}</li>
         </ul>
 
-        <div class="infowrapper" v-if="props.row.text != 'Power'">
-        </div>
-
         <div id="maininfo" v-if="props.row.text == 'Power' && selectedIndexStore.selectedRowIndex == 0">
             <h1>Welcome to ViteStation 3!</h1>
             <p>
                 Navigate through the XMB menu using the arrow keys to have a look around. <br>
+                Updates are coming to make it even better and realistic 🔧 <br>
                 <!-- Press Enter/Esc to open/close a menu. <br> -->
                 <!-- You can also navigate with an Xbox controller. <br>
                 Use the D-Pad
@@ -80,27 +78,6 @@ ul {
 .xmb_row_info{
     margin-left: 20px;
     font-size: 14px;
-}
-
-.infowrapper{
-    opacity: 0;
-    position: absolute;
-    width: 350%;
-    height: auto;
-    top: 0;
-    left: 250px;
-    padding: 20px;
-    border: 1px solid;
-    border-radius: 15px;
-    z-index: -1;
-    text-shadow: none;
-    background-color: dodgerblue;
-    
-    h1{
-        border-bottom: 2px solid white;
-        padding: 10px 0 20px;
-    }
-
 }
 
 #maininfo{

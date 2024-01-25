@@ -4,17 +4,17 @@ import router from '../router/router';
 
 setTimeout(() => {
     router.push('/')
-}, 1000);
+}, 3000);
 
 </script>
 
 <template>
     <section class="header" id="header">
-        <h1>AS3</h1>
+        <h1>VS3</h1>
         <!-- <h1>
             <img src="assets/icons/as3.svg" alt="">
         </h1> -->
-        <p>AminStation 3</p>
+        <p>ViteStation 3</p>
     </section>
 </template>
 

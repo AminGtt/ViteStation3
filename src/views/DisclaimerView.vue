@@ -4,7 +4,7 @@ import router from '../router/router';
 
 setTimeout(() => {
     router.push('/header')
-}, 1000);
+}, 5000);
 
 </script>
 

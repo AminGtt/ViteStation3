@@ -153,9 +153,9 @@ function moveMenu(sign, maxCol) {
     <Clock />
 
     <main class="menu" id="menu">
-        <p id="wip">
+        <!-- <p id="wip">
             WIP
-        </p>
+        </p> -->
         <section id="xmb">
 
             <XmbColumn v-for="(col, index) in columnsStore.cols" :key="index" :wantedCol="col" :index="index"/>
