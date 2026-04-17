@@ -1,11 +1,10 @@
-<script setup>
-import router from '../router';
+<script setup lang="ts">
+    import router from '@/router';
 
 
-setTimeout(() => {
-    router.push('/')
-}, 3000);
-
+    setTimeout(() => {
+        router.push('/')
+    }, 3000);
 </script>
 
 <template>
@@ -18,39 +17,35 @@ setTimeout(() => {
     </section>
 </template>
 
-<style scoped lang="scss">
+<style scoped lang="sass">
 
-#header{
-    //opacity: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    margin-top: 20%;
-    padding: 40px;
-    position: relative;
-    z-index: 1; 
-    transition: opacity 3s ease-in-out;
-    
-    h1{
-        margin: revert;
-        font-size: 50px;
-        font-weight: 500;
-        letter-spacing: -2px;
-        color: #dadada;
-        text-shadow: 2px 2px 5px black;
+    #header
+        //opacity: 0
+        display: flex
+        flex-direction: column
+        align-items: flex-end
+        margin-top: 20%
+        padding: 40px
+        position: relative
+        z-index: 1
+        transition: opacity 3s ease-in-out
 
-        img{
-            scale: 2;
-        }
-    }
+        h1
+            margin: revert
+            font-size: 50px
+            font-weight: 500
+            letter-spacing: -2px
+            color: #dadada
+            text-shadow: 2px 2px 5px black
 
-    p{
-        font-size: 32px;
-        margin-top: -40px;
-        letter-spacing: -2px;
-        color: #dadada;
-        text-shadow: 2px 2px 5px black;
-    }
-}
+            img
+                scale: 2
+
+        p
+            font-size: 32px
+            margin-top: -40px
+            letter-spacing: -2px
+            color: #dadada
+            text-shadow: 2px 2px 5px black
 
 </style>

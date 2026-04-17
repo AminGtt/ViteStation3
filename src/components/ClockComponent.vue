@@ -1,22 +1,21 @@
-<script setup>
-import { onMounted } from 'vue';
+<script setup lang="ts">
+    import { onMounted } from 'vue';
 
-onMounted(() => {
-    updateClock()
-})
-let date
-function updateClock() {
-    date = new Date
-    let dateLocation = document.querySelector('#date')
+    onMounted(() => {
+        updateClock()
+    })
+    let date
+    function updateClock() {
+        date = new Date
+        const dateLocation = document.querySelector('#date')
 
-    dateLocation.innerText = date.toLocaleTimeString() + ' ' + date.toLocaleDateString(navigator.language, {year: '2-digit', month: 'numeric'})
+        dateLocation.innerText = date.toLocaleTimeString() + ' ' + date.toLocaleDateString(navigator.language, {year: '2-digit', month: 'numeric'})
 
-    setTimeout(
-        updateClock,
-        1000
-    )
-}
-
+        setTimeout(
+            updateClock,
+            1000
+        )
+    }
 </script>
 
 <template>
@@ -31,52 +30,48 @@ function updateClock() {
     </section>
 </template>
 
-<style scoped lang="scss">
+<style scoped lang="sass">
 
-#clock{
-    //opacity: 0;
-    position: absolute;
-    top: 5%;
-    left: 80%; 
-    bottom: 0;
-    right: 0;
-    width: 5%;
-    color: white;
-    text-align: right;
-    font-size: 18px;
-    z-index: 3;
-    .clock-container{
-        display: flex;
-        justify-content: space-between;
-        width: 400%;
-        border: 1px solid #dadada;
-        border-right: none;
-        border-radius: 3px;
-        padding-right: 0px 40px;
-        background-color: rgba($color: white, $alpha: 0.1);
+    #clock
+        //opacity: 0
+        position: absolute
+        top: 5%
+        left: 80%
+        bottom: 0
+        right: 0
+        width: 5%
+        color: white
+        text-align: right
+        font-size: 18px
+        z-index: 3
 
-        p{
-            letter-spacing: 1px;
-            margin: revert;
-            margin-right: 20px;
-            text-shadow: 2px 2px 5px black;
-            font-size: 18px;
-        }
+        .clock-container
+            display: flex
+            justify-content: space-between
+            width: 400%
+            border: 1px solid #dadada
+            border-right: none
+            border-radius: 3px
+            padding-right: 0px 40px
+            background-color: rgba($color: white, $alpha: 0.1)
 
-        #trophy{
+            p
+                letter-spacing: 1px
+                margin: revert
+                margin-right: 20px
+                text-shadow: 2px 2px 5px black
+                font-size: 18px
 
-            display: flex;
-            align-items: center;
-            position: relative;
-            
-            img{
-                height: 25px;
-                width: 25px;
-                padding: 5px;
-                margin-left: 10px;
-            }
-        }
-    }
-}
+            #trophy
+
+                display: flex
+                align-items: center
+                position: relative
+
+                img
+                    height: 25px
+                    width: 25px
+                    padding: 5px
+                    margin-left: 10px
 
 </style>

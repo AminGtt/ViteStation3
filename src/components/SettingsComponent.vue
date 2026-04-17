@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 
 </script>
 
@@ -22,42 +22,42 @@
                 </select>
 
                 <div class="themewrapper">
-                    <img src="../assets/icons/colors/sapphire.png" alt="sapphire_icon">
+                    <img src="/public/colors/sapphire.png" alt="sapphire_icon">
                     <p>Sapphire</p>
                 </div>
 
                 <div class="themewrapper">
-                    <img src="../assets/icons/colors/silk.png" alt="silk_icon">
+                    <img src="/public/colors/silk.png" alt="silk_icon">
                     <p>Silk</p>
                 </div>
 
                 <div class="themewrapper">
-                    <img src="../assets/icons/colors/turquoise.png" alt="turquoise_icon">
+                    <img src="/public/colors/turquoise.png" alt="turquoise_icon">
                     <p>Turquoise</p>
                 </div>
 
                 <div class="themewrapper">
-                    <img src="../assets/icons/colors/emerald.png" alt="emerald_icon">
+                    <img src="/public/colors/emerald.png" alt="emerald_icon">
                     <p>Emerald</p>
                 </div>
 
                 <div class="themewrapper">
-                    <img src="../assets/icons/colors/gold.png" alt="gold_icon">
+                    <img src="/public/colors/gold.png" alt="gold_icon">
                     <p>Gold</p>
                 </div>
 
                 <div class="themewrapper">
-                    <img src="../assets/icons/colors/ruby.png" alt="ruby_icon">
+                    <img src="/public/colors/ruby.png" alt="ruby_icon">
                     <p>Ruby</p>
                 </div>
 
                 <div class="themewrapper">
-                    <img src="../assets/icons/colors/amethyst.png" alt="amethyst_icon">
+                    <img src="/public/colors/amethyst.png" alt="amethyst_icon">
                     <p>Amethyst</p>
                 </div>
 
                 <div class="themewrapper">
-                    <img src="../assets/icons/colors/amber.png" alt="amber_icon">
+                    <img src="/public/colors/amber.png" alt="amber_icon">
                     <p>Amber</p>
                 </div>
 
@@ -139,59 +139,51 @@
     </aside>
 </template>
 
-<style scoped lang="scss">
+<style scoped lang="sass">
 
-#settingswrapper{
-    opacity: 0;
-    visibility: visible;
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 30%;
-    height: 100%;
-    background: rgb(255,255,255);
-    background: linear-gradient(90deg, rgba(255,255,255,0.2) 0%, rgba(0,0,0,0.01) 100%);
-    transition: opacity ease .1s;
-    
-    article{
-        position: absolute;
-        top: 40%;
-        margin: 10px 0 10px 25px;
-    }
-}
+    #settingswrapper
+        opacity: 0
+        visibility: visible
+        position: fixed
+        top: 0
+        right: 0
+        width: 30%
+        height: 100%
+        background: rgb(255,255,255)
+        background: linear-gradient(90deg, rgba(255,255,255,0.2) 0%, rgba(0,0,0,0.01) 100%)
+        transition: opacity ease .1s
 
-#settingswrapper::before{
-    content: "";
-    position: absolute;
-    height: 100%;
-    width: 4px;
-    background: black;
-    background: linear-gradient(to bottom, rgba(80,80,80,0.4) 0%, rgba(255,255,255,1) 50%, rgba(80,80,80,0.4) 100%);
-    filter: drop-shadow(6px 0px 10px #000);
-}
+        article
+            position: absolute
+            top: 40%
+            margin: 10px 0 10px 25px
 
-.themewrapper{
-    display: flex;
+    #settingswrapper::before
+        content: ""
+        position: absolute
+        height: 100%
+        width: 4px
+        background: black
+        background: linear-gradient(to bottom, rgba(80,80,80,0.4) 0%, rgba(255,255,255,1) 50%, rgba(80,80,80,0.4) 100%)
+        filter: drop-shadow(6px 0px 10px #000)
 
-    img{
-        height: 25px;
-        width: 25px;
-        margin-right: 15px;
-    }
-}
+    .themewrapper
+        display: flex
 
-#offbtn, #offbtnsound{
-    visibility: hidden;
-    position: absolute;
-}
+        img
+            height: 25px
+            width: 25px
+            margin-right: 15px
 
-.brightnessTriggers{
-    display: flex;
+    #offbtn, #offbtnsound
+        visibility: hidden
+        position: absolute
 
-    p{
-        opacity: 1;
-        font-size: 25px;
-    }
-}
+    .brightnessTriggers
+        display: flex
+
+        p
+            opacity: 1
+            font-size: 25px
 
 </style>

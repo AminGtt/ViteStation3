@@ -1,26 +1,26 @@
-<script setup>
-import { useEventListener } from '@vueuse/core'
-import router from '@/router'
-import { useWelcomeStore } from '@/stores/WelcomeStore'
-import startupSoundUrl from '../assets/sounds/startup.mp3'
+<script setup lang="ts">
+    import { useEventListener } from '@vueuse/core'
+    import router from '@/router'
+    import { useWelcomeStore } from '@/stores/WelcomeStore'
+    import startupSoundUrl from '@/assets/sounds/startup.mp3'
 
-const startupSound = new Audio(startupSoundUrl)
+    const startupSound = new Audio(startupSoundUrl)
 
-const welcomeStore = useWelcomeStore()
+    const welcomeStore = useWelcomeStore()
 
-useEventListener(document.body, 'keydown', (e) => {
-    if (e.key === 'Enter') {
-        e.preventDefault()
+    useEventListener(document.body, 'keydown', (e) => {
+        if (e.key === 'Enter') {
+            e.preventDefault()
 
-        startupSound.play()
-        goNext()
+            startupSound.play()
+            goNext()
+        }
+    })
+
+    function goNext() {
+        welcomeStore.changeIsValid()
+        router.push('/disclaimer')
     }
-})
-
-function goNext() {
-    welcomeStore.changeIsValid()
-    router.push('/disclaimer')
-}
 </script>
 
 <template>
@@ -50,61 +50,47 @@ function goNext() {
     </section>
 </template>
 
-<style lang="scss" scoped>
-#welcomer {
-    position: relative;
-    height: 100%;
-    width: 100%;
-    backdrop-filter: blur(10px);
-    text-align: center;
+<style lang="sass" scoped>
+    #welcomer
+        position: relative
+        height: 100%
+        width: 100%
+        backdrop-filter: blur(10px)
+        text-align: center
 
-    #welcomerText {
-        position: relative;
-        top: 35%;
-    }
+        #welcomerText
+            position: relative
+            top: 35%
 
-    #welcomerBtn {
-        position: absolute;
-        top: 87%;
-        left: 25%;
-        font-size: 20px;
-        display: flex;
-        align-items: center;
-        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
-    }
-}
+        #welcomerBtn
+            position: absolute
+            top: 87%
+            left: 25%
+            font-size: 20px
+            display: flex
+            align-items: center
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8)
 
-#welcomer::before {
-    content: '';
-    position: absolute;
-    height: 3px;
-    width: 100%;
-    background-color: white;
-    top: 15%;
-    left: 0;
-    box-shadow:
-        0 0 5px #dfdfdf,
-        0 0 8px #ffffff,
-        0 0 15px #b6b6b4,
-        0 0 20px #b9b9b9;
-}
+    #welcomer::before
+        content: ''
+        position: absolute
+        height: 3px
+        width: 100%
+        background-color: white
+        top: 15%
+        left: 0
+        box-shadow: 0 0 5px #dfdfdf, 0 0 8px #ffffff, 0 0 15px #b6b6b4, 0 0 20px #b9b9b9
 
-#welcomer::after {
-    content: '';
-    position: absolute;
-    height: 3px;
-    width: 100%;
-    background-color: white;
-    bottom: 15%;
-    left: 0;
-    box-shadow:
-        0 0 5px #dfdfdf,
-        0 0 8px #ffffff,
-        0 0 15px #b6b6b4,
-        0 0 20px #b9b9b9;
-}
+    #welcomer::after
+        content: ''
+        position: absolute
+        height: 3px
+        width: 100%
+        background-color: white
+        bottom: 15%
+        left: 0
+        box-shadow: 0 0 5px #dfdfdf, 0 0 8px #ffffff, 0 0 15px #b6b6b4, 0 0 20px #b9b9b9
 
-.okBtn {
-    animation: glow 1s ease-in-out infinite alternate;
-}
+    .okBtn
+        animation: glow 1s ease-in-out infinite alternate
 </style>

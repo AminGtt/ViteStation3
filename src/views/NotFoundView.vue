@@ -1,15 +1,14 @@
-<script setup></script>
+<script setup lang="ts"></script>
 
 <template>
     <h1>404 - Not found</h1>
 </template>
 
-<style scoped lang="scss">
+<style scoped lang="sass">
 
-h1{
-    text-align: center;
-    position: relative;
-    top: 30%;
-}
+    h1
+        text-align: center
+        position: relative
+        top: 30%
 
 </style>

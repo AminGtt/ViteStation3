@@ -1,12 +1,10 @@
-<script setup>
-import { useSelectedIndexStore } from '../stores/SelectedIndexStore';
+<script setup lang="ts">
+    import { useSelectedIndexStore } from '@/stores/SelectedIndexStore';
 
+    const selectedIndexStore = useSelectedIndexStore();
+    const props = defineProps(['row', 'index', 'currentCol'])
 
-const selectedIndexStore = useSelectedIndexStore();
-const props = defineProps(['row', 'index', 'currentCol'])
-
-let iconPath = props.currentCol.split(' ').join('')
-
+    const iconPath = props.currentCol.split(' ').join('')
 </script>
 
 <template>
@@ -26,16 +24,16 @@ let iconPath = props.currentCol.split(' ').join('')
                 <!-- You can also navigate with an Xbox controller. <br>
                 Use the D-Pad
                 <span>
-                    <img class="details_main_icon d-pad" src="../assets/icons/xbox-keys/d-pad.png" alt="d-pad_icon">
+                    <img class="details_main_icon d-pad" src="@/assets/icons/xbox-keys/d-pad.png" alt="d-pad_icon">
                 </span>
                 to move and
                 <span>
-                    <img class="details_main_icon a-btn" src="../assets/icons/xbox-keys/Akey_xbox_controller.png"
+                    <img class="details_main_icon a-btn" src="@/assets/icons/xbox-keys/Akey_xbox_controller.png"
                         alt="xbox_A_icon">
                 </span>
                 /
                 <span>
-                    <img class="details_main_icon b-btn" src="../assets/icons/xbox-keys/Bkey_xbox_controller.png"
+                    <img class="details_main_icon b-btn" src="@/assets/icons/xbox-keys/Bkey_xbox_controller.png"
                         alt="xbox_B_icon">
                 </span> to open/close menus. -->
             </p>
@@ -45,74 +43,64 @@ let iconPath = props.currentCol.split(' ').join('')
     </ul>
 </template>
 
-<style lang="scss">
+<style lang="sass">
 
-ul {
-    list-style: none;
-    display: inline;
-}
+    ul
+        list-style: none
+        display: inline
 
-.xmb_row{
-    display: flex;
-    align-items: center;
-    margin: 0 0 40px 15px;
-    scale: 0.9;
-    position: relative;
-    transition: top .5s;
-    top: 0;
-    white-space: nowrap;
-}
+    .xmb_row
+        display: flex
+        align-items: center
+        margin: 0 0 40px 15px
+        scale: 0.9
+        position: relative
+        transition: top .5s
+        top: 0
+        white-space: nowrap
 
-.xmb_row_icons {
-    position: relative;
-    height: 70px;
-    width: 70px;
-    object-fit: contain;
-}
+    .xmb_row_icons
+        position: relative
+        height: 70px
+        width: 70px
+        object-fit: contain
 
-.xmb_row_text{
-    margin-left: 20px;
-    
-}
+    .xmb_row_text
+        margin-left: 20px
 
-.xmb_row_info{
-    margin-left: 20px;
-    font-size: 14px;
-}
+    .xmb_row_info
+        margin-left: 20px
+        font-size: 14px
 
-#maininfo{
-    // opacity: 0;
-    position: absolute;
-    width: 350%;
-    height: auto;
-    top: 0;
-    left: 250px;
-    padding: 20px;
-    border: 1px solid;
-    border-radius: 15px;
-    z-index: -1;
-    text-shadow: none;
-    background-color: dodgerblue;
-    transition: opacity .1s ease;
-    font-size: 18px;
-    white-space: normal;
-    line-height: 2em;
-    
-    h1{
-        border-bottom: 2px solid white;
-        padding: 10px 0 20px;
-    }
+    #maininfo
+        // opacity: 0
+        position: absolute
+        width: 350%
+        height: auto
+        top: 0
+        left: 250px
+        padding: 20px
+        border: 1px solid
+        border-radius: 15px
+        z-index: -1
+        text-shadow: none
+        background-color: dodgerblue
+        transition: opacity .1s ease
+        font-size: 18px
+        white-space: normal
+        line-height: 2em
 
-    .d-pad, .a-btn, .b-btn{
-        position: relative;
-        top: 5px;
-        margin: 0;
-    }
-}
+        h1
+            border-bottom: 2px solid white
+            padding: 10px 0 20px
 
-.focus{
-    animation: glow 1s ease-in-out infinite alternate;
-    scale: 1;
-}
+        .d-pad, .a-btn, .b-btn
+            position: relative
+            top: 5px
+            margin: 0
+
+    .focus
+        animation: glow 1s ease-in-out infinite alternate
+        scale: 1
 
 </style>

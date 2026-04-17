@@ -1,151 +1,150 @@
-<script setup>
-// import { useRouter } from 'vue-router' ---- Keep this as exemple of useRouter()
-import router from "../router";
-import { useEventListener } from '@vueuse/core';
+<script setup lang="ts">
+    // import { useRouter } from 'vue-router' ---- Keep this as exemple of useRouter()
+    import router from "@/router";
+    import { useEventListener } from '@vueuse/core';
 
-import { useWelcomeStore } from '@/stores/WelcomeStore';
-import { useSelectedIndexStore } from '@/stores/SelectedIndexStore';
-import { useColumnsStore } from '@/stores/ColumnsStore';
-import { useRowsStore } from '@/stores/RowsStore';
+    import { useWelcomeStore } from '@/stores/WelcomeStore';
+    import { useSelectedIndexStore } from '@/stores/SelectedIndexStore';
+    import { useColumnsStore } from '@/stores/ColumnsStore';
+    import { useRowsStore } from '@/stores/RowsStore';
 
-import XmbColumn from '@/components/XmbColumnComponent.vue'
-import Clock from '@/components/ClockComponent.vue'
-import { onMounted } from "vue";
+    import XmbColumn from '@/components/XmbColumnComponent.vue'
+    import Clock from '@/components/ClockComponent.vue'
+    import { onMounted } from "vue";
 
-import navSoundUrl from '../assets/sounds/nav.mp3'
+    import navSoundUrl from '@/assets/sounds/nav.mp3'
 
-const welcomeStore = useWelcomeStore(),
-selectedIndexStore = useSelectedIndexStore(),
-columnsStore = useColumnsStore(),
-rowsStore = useRowsStore();
-
-
-if (welcomeStore.isWelcomeValid === false) {
-    //useRouter().push('welcome') ---- Keep this as exemple of useRouter()
-    router.push('/welcome');
-}
-
-const navSound = new Audio(navSoundUrl);
-
-let xmbMenu = '',
-    xmbCols = '',
-    leftValMenu = 29,
-    topValRow = 0;
-
-onMounted(()=>{
-    xmbMenu = document.getElementById('xmb');
-    xmbCols = document.querySelectorAll('.xmb_col_body');
-
-    xmbMenu.style.left = leftValMenu+'%';
-
-    return xmbMenu, xmbCols
-})
+    const welcomeStore = useWelcomeStore(),
+        selectedIndexStore = useSelectedIndexStore(),
+        columnsStore = useColumnsStore(),
+        rowsStore = useRowsStore();
 
 
-function playNavSound() {
-    navSound.cloneNode(true).play();
-}
-
-useEventListener(document.body, 'keydown', (e) => {
-    if(e.key === 'ArrowRight'){
-        playNavSound();
-        e.preventDefault();
-        
-        right();
-    }
-    else if(e.key === 'ArrowLeft'){
-        playNavSound();
-        e.preventDefault();
-        
-        left();
-    }
-    else if(e.key === 'ArrowDown'){
-        playNavSound();
-        e.preventDefault();
-
-        down();
-    }
-    else if(e.key === 'ArrowUp'){
-        playNavSound();
-        e.preventDefault();
-
-        up();
-    }
-    else if(e.key === 'Enter'){
-        playNavSound();
-        e.preventDefault();
-        
-        open();
-    }
-    else if(e.key === 'Escape'){
-        playNavSound();
-        e.preventDefault();
-        
-        close();
-    }
-});
-
-function right() { // left: -10%
-    moveMenu('-', columnsStore.cols.length)
-    
-    selectedIndexStore.changeColIndex('+', columnsStore.cols.length);
-}
-
-function left() { // left: +10%
-    moveMenu('+')
-    
-    selectedIndexStore.changeColIndex('-');
-}
-
-function down() { // top: -110px && -220 for the one that go top
-    moveRows('-', rowsStore.maxRowsLength[selectedIndexStore.selectedColIndex])
-    
-    selectedIndexStore.changeRowIndex('+', rowsStore.maxRowsLength[selectedIndexStore.selectedColIndex]);
-}
-
-function up() { // top: +110px && +220 for the one that go top
-    moveRows('+')
-    
-    selectedIndexStore.changeRowIndex('-');
-}
-
-function open() {
-    console.log('open');
-}
-
-function close() {
-    console.log('close');
-}
-
-function moveRows(sign, maxRowsForCurrentCol) {
-    if (sign == '-' && selectedIndexStore.selectedRowIndex < maxRowsForCurrentCol-1 ) {
-        document.querySelectorAll('.xmb_col')[selectedIndexStore.selectedColIndex].querySelectorAll('.xmb_row')[selectedIndexStore.selectedRowIndex].style.top = '-220px';
-        topValRow -= 110
-    } else if (sign == '+' &&  selectedIndexStore.selectedRowIndex > 0 ) {
-        document.querySelectorAll('.xmb_col')[selectedIndexStore.selectedColIndex].querySelectorAll('.xmb_row')[selectedIndexStore.selectedRowIndex-1].style.top = '0px';
-        topValRow += 110
+    if (welcomeStore.isWelcomeValid === false) {
+        //useRouter().push('welcome') ---- Keep this as exemple of useRouter()
+        router.push('/welcome');
     }
 
-    xmbCols[selectedIndexStore.selectedColIndex].style.top = topValRow+'px'
-}
+    const navSound = new Audio(navSoundUrl);
 
-function moveMenu(sign, maxCol) {
-    //console.log(document.querySelectorAll('.xmb_col')[selectedIndexStore.selectedColIndex].querySelectorAll('.xmb_row'));
-    for (let row of document.querySelectorAll('.xmb_col')[selectedIndexStore.selectedColIndex].querySelectorAll('.xmb_row')){
-        row.style.top = '0px'
+    let xmbMenu = '',
+        xmbCols = '',
+        leftValMenu = 29,
+        topValRow = 0;
+
+    onMounted(()=>{
+        xmbMenu = document.getElementById('xmb');
+        xmbCols = document.querySelectorAll('.xmb_col_body');
+
+        xmbMenu.style.left = leftValMenu+'%';
+
+        return xmbMenu, xmbCols
+    })
+
+
+    function playNavSound() {
+        navSound.cloneNode(true).play();
     }
 
-    topValRow = 0
+    useEventListener(document.body, 'keydown', (e) => {
+        if(e.key === 'ArrowRight'){
+            playNavSound();
+            e.preventDefault();
 
-    if (sign == '-' && selectedIndexStore.selectedColIndex < maxCol-1) {
-        leftValMenu -= 10;
-    } else if (sign == '+' && selectedIndexStore.selectedColIndex > 0) {
-        leftValMenu += 10
+            right();
+        }
+        else if(e.key === 'ArrowLeft'){
+            playNavSound();
+            e.preventDefault();
+
+            left();
+        }
+        else if(e.key === 'ArrowDown'){
+            playNavSound();
+            e.preventDefault();
+
+            down();
+        }
+        else if(e.key === 'ArrowUp'){
+            playNavSound();
+            e.preventDefault();
+
+            up();
+        }
+        else if(e.key === 'Enter'){
+            playNavSound();
+            e.preventDefault();
+
+            open();
+        }
+        else if(e.key === 'Escape'){
+            playNavSound();
+            e.preventDefault();
+
+            close();
+        }
+    });
+
+    function right() { // left: -10%
+        moveMenu('-', columnsStore.cols.length)
+
+        selectedIndexStore.changeColIndex('+', columnsStore.cols.length);
     }
-    xmbMenu.style.left = leftValMenu+'%';
-    xmbCols[selectedIndexStore.selectedColIndex].style.top = topValRow+'px';
-}
 
+    function left() { // left: +10%
+        moveMenu('+')
+
+        selectedIndexStore.changeColIndex('-');
+    }
+
+    function down() { // top: -110px && -220 for the one that go top
+        moveRows('-', rowsStore.maxRowsLength[selectedIndexStore.selectedColIndex])
+
+        selectedIndexStore.changeRowIndex('+', rowsStore.maxRowsLength[selectedIndexStore.selectedColIndex]);
+    }
+
+    function up() { // top: +110px && +220 for the one that go top
+        moveRows('+')
+
+        selectedIndexStore.changeRowIndex('-');
+    }
+
+    function open() {
+        console.log('open');
+    }
+
+    function close() {
+        console.log('close');
+    }
+
+    function moveRows(sign, maxRowsForCurrentCol) {
+        if (sign == '-' && selectedIndexStore.selectedRowIndex < maxRowsForCurrentCol-1 ) {
+            document.querySelectorAll('.xmb_col')[selectedIndexStore.selectedColIndex].querySelectorAll('.xmb_row')[selectedIndexStore.selectedRowIndex].style.top = '-220px';
+            topValRow -= 110
+        } else if (sign == '+' &&  selectedIndexStore.selectedRowIndex > 0 ) {
+            document.querySelectorAll('.xmb_col')[selectedIndexStore.selectedColIndex].querySelectorAll('.xmb_row')[selectedIndexStore.selectedRowIndex-1].style.top = '0px';
+            topValRow += 110
+        }
+
+        xmbCols[selectedIndexStore.selectedColIndex].style.top = topValRow+'px'
+    }
+
+    function moveMenu(sign, maxCol) {
+        //console.log(document.querySelectorAll('.xmb_col')[selectedIndexStore.selectedColIndex].querySelectorAll('.xmb_row'));
+        for (const row of document.querySelectorAll('.xmb_col')[selectedIndexStore.selectedColIndex].querySelectorAll('.xmb_row')){
+            row.style.top = '0px'
+        }
+
+        topValRow = 0
+
+        if (sign == '-' && selectedIndexStore.selectedColIndex < maxCol-1) {
+            leftValMenu -= 10;
+        } else if (sign == '+' && selectedIndexStore.selectedColIndex > 0) {
+            leftValMenu += 10
+        }
+        xmbMenu.style.left = leftValMenu+'%';
+        xmbCols[selectedIndexStore.selectedColIndex].style.top = topValRow+'px';
+    }
 </script>
 
 <template>
@@ -165,32 +164,28 @@ function moveMenu(sign, maxCol) {
     </main>
 </template>
 
-<style scoped lang="scss">
+<style scoped lang="sass">
 
-#wip{
-    text-align: center;
-    font-size: 70px;
-    position: relative;
-    top: 300px;
-}
+    #wip
+        text-align: center
+        font-size: 70px
+        position: relative
+        top: 300px
 
-main {
-    height: inherit;
-    // opacity: 0;
-    transition: ease 500ms;
+    main
+        height: inherit
+        // opacity: 0
+        transition: ease 500ms
 
-    li,h1,p {
-        opacity: 80%;
-    }
-}
+        li,h1,p
+            opacity: 80%
 
-#xmb {
-    display: flex;
-    position: relative;
-    top: 27%;
-    //left: 29%;
-    transition: left .5s ease;
-    
-}
+
+    #xmb
+        display: flex
+        position: relative
+        top: 27%
+        //left: 29%
+        transition: left .5s ease
 
 </style>

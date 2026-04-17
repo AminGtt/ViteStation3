@@ -1,8 +1,14 @@
 import { defineStore } from 'pinia'
 
+interface RowItem {
+    icon: string
+    text: string
+    info?: string
+}
+
 export const useRowsStore = defineStore('rows', () => {
-    let maxRowsLength = [];
-    const rows = {
+    const maxRowsLength: number[] = [];
+    const rows: Record<string, RowItem[]> = {
         home: [
             {
                 icon: 'power',
