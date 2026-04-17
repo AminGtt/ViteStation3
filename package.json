@@ -16,10 +16,10 @@
         "force-deploy": "git subtree push --prefix dist origin prod"
     },
     "dependencies": {
-        "@vueuse/core": "^10.6.1",
-        "pinia": "^2.1.7",
+        "@vueuse/core": "^14.2.1",
+        "pinia": "^3.0.4",
         "vue": "^3.3.4",
-        "vue-router": "^4.2.5"
+        "vue-router": "^5.0.4"
     },
     "devDependencies": {
         "@types/node": "^25.6.0",
