@@ -3,7 +3,7 @@ import { defineConfigWithVueTs, vueTsConfigs } from '@vue/eslint-config-typescri
 import prettierConfig from 'eslint-config-prettier'
 
 export default [
-    { ignores: ['dist/'] },
+    { ignores: ['dist/', 'public/'] },
     ...defineConfigWithVueTs(
         pluginVue.configs['flat/essential'],
         vueTsConfigs.recommended,

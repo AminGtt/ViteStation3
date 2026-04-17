@@ -35,7 +35,7 @@
             <p>Press OK to continue.</p>
             <br />
             <br />
-            <p class="okBtn" @keypress.enter="goNext()">OK</p>
+            <p class="okBtn" @keydown.enter="goNext()">OK</p>
         </div>
 
         <div id="welcomerBtn">

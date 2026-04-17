@@ -1,10 +1,10 @@
-const regl = createREGL( {
+const regl = createREGL({
     attributes: {
         antialias: true
     },
     optionalExtensions: [ "EXT_disjoint_timer_query" ],
     profile: true
-} );
+});
 
 const RESOLUTION = 50;
 const NUM_PARTICLES = 400;
@@ -62,7 +62,7 @@ const drawBackground = regl( {
     },
     uniforms: {
         color: regl.prop( "color" ),
-        resolution: ( context, props ) => [ context.viewportWidth, context.viewportHeight ],
+        resolution: (context) => [ context.viewportWidth, context.viewportHeight ],
         bayerTexture: regl.texture( {
             data: Uint8Array.of(
                   0, 128,  32, 160,   8, 136,  40, 168,
@@ -148,7 +148,7 @@ config.addRange( "Particle opacity", 0.75, 0, 1, 0.01, ( particleOpacity ) => dr
 
 let lastTime = 0;
 
-var tick = regl.frame( ( context ) => {
+regl.frame((context) => {
     drawParams.backgroundColor.forEach( ( channel, i ) => drawParams.color[ i ] = channel * drawParams.brightness / 255 );
     drawParams.ratio = Math.max( 1.0, Math.min( context.viewportWidth / context.viewportHeight, 2.0 ) ) * 0.375;
     drawParams.time = drawParams.time + ( context.time - lastTime ) * drawParams.flowSpeed;
@@ -156,7 +156,7 @@ var tick = regl.frame( ( context ) => {
     drawBackground( drawParams );
     drawFlow( drawParams );
     drawParticles( drawParams );
-} );
+});
 //requestAnimationFrame(tick.cancel);
 
 /* function perf() {
