@@ -1,15 +1,15 @@
 <script setup>
 // import { useRouter } from 'vue-router' ---- Keep this as exemple of useRouter()
-import router from "../router/router";
+import router from "../router";
 import { useEventListener } from '@vueuse/core';
 
-import { useWelcomeStore } from '../stores/WelcomeStore';
-import { useSelectedIndexStore } from '../stores/SelectedIndexStore';
-import { useColumnsStore } from '../stores/ColumnsStore';
-import { useRowsStore } from '../stores/RowsStore';
+import { useWelcomeStore } from '@/stores/WelcomeStore';
+import { useSelectedIndexStore } from '@/stores/SelectedIndexStore';
+import { useColumnsStore } from '@/stores/ColumnsStore';
+import { useRowsStore } from '@/stores/RowsStore';
 
-import XmbColumn from '../components/XmbColumnComponent.vue'
-import Clock from '../components/ClockComponent.vue'
+import XmbColumn from '@/components/XmbColumnComponent.vue'
+import Clock from '@/components/ClockComponent.vue'
 import { onMounted } from "vue";
 
 import navSoundUrl from '../assets/sounds/nav.mp3'
@@ -23,14 +23,14 @@ rowsStore = useRowsStore();
 if (welcomeStore.isWelcomeValid === false) {
     //useRouter().push('welcome') ---- Keep this as exemple of useRouter()
     router.push('/welcome');
-};
+}
 
 const navSound = new Audio(navSoundUrl);
 
 let xmbMenu = '',
-xmbCols = '',
-leftValMenu = 29,
-topValRow = 0;
+    xmbCols = '',
+    leftValMenu = 29,
+    topValRow = 0;
 
 onMounted(()=>{
     xmbMenu = document.getElementById('xmb');
@@ -44,7 +44,7 @@ onMounted(()=>{
 
 function playNavSound() {
     navSound.cloneNode(true).play();
-};
+}
 
 useEventListener(document.body, 'keydown', (e) => {
     if(e.key === 'ArrowRight'){

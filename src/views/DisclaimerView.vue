@@ -1,5 +1,5 @@
 <script setup>
-import router from '../router/router';
+import router from '../router';
 
 
 setTimeout(() => {
@@ -33,12 +33,10 @@ setTimeout(() => {
     }
     p{  
         position: relative;
-        margin: revert;
         top: 50%;
         left: 50%;
         transform: translate(-75%, -50%);
-        margin-top: -10px;
-        margin-left: 20%;
+        margin: -10px revert revert 20%;
         width: 65%;
         text-transform: uppercase;
         font-size: 1.1rem;
