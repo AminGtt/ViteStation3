@@ -4,12 +4,14 @@
     onMounted(() => {
         updateClock()
     })
-    let date
-    function updateClock() {
-        date = new Date
-        const dateLocation = document.querySelector('#date')
 
-        dateLocation.innerText = date.toLocaleTimeString() + ' ' + date.toLocaleDateString(navigator.language, {year: '2-digit', month: 'numeric'})
+    let date
+
+    const updateClock = () => {
+        date = new Date
+        const dateLocation: HTMLElement | null = document.querySelector('#date')
+
+        if (dateLocation) dateLocation.innerText = date.toLocaleTimeString() + ' ' + date.toLocaleDateString(navigator.language, {year: '2-digit', month: 'numeric'})
 
         setTimeout(
             updateClock,

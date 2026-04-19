@@ -3,7 +3,7 @@
     import { useRowsStore } from '@/stores/RowsStore';
 
     const props = defineProps(['wantedRow']),
-    rowsStore = useRowsStore();
+        rowsStore = useRowsStore();
 
     rowsStore.maxRowsLength.push(rowsStore.rows[props.wantedRow].length) // setup the length of all the cols at creation
 </script>

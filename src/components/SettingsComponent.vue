@@ -22,42 +22,42 @@
                 </select>
 
                 <div class="themewrapper">
-                    <img src="/public/colors/sapphire.png" alt="sapphire_icon">
+                    <img src="/colors/sapphire.png" alt="sapphire_icon">
                     <p>Sapphire</p>
                 </div>
 
                 <div class="themewrapper">
-                    <img src="/public/colors/silk.png" alt="silk_icon">
+                    <img src="/colors/silk.png" alt="silk_icon">
                     <p>Silk</p>
                 </div>
 
                 <div class="themewrapper">
-                    <img src="/public/colors/turquoise.png" alt="turquoise_icon">
+                    <img src="/colors/turquoise.png" alt="turquoise_icon">
                     <p>Turquoise</p>
                 </div>
 
                 <div class="themewrapper">
-                    <img src="/public/colors/emerald.png" alt="emerald_icon">
+                    <img src="/colors/emerald.png" alt="emerald_icon">
                     <p>Emerald</p>
                 </div>
 
                 <div class="themewrapper">
-                    <img src="/public/colors/gold.png" alt="gold_icon">
+                    <img src="/colors/gold.png" alt="gold_icon">
                     <p>Gold</p>
                 </div>
 
                 <div class="themewrapper">
-                    <img src="/public/colors/ruby.png" alt="ruby_icon">
+                    <img src="/colors/ruby.png" alt="ruby_icon">
                     <p>Ruby</p>
                 </div>
 
                 <div class="themewrapper">
-                    <img src="/public/colors/amethyst.png" alt="amethyst_icon">
+                    <img src="/colors/amethyst.png" alt="amethyst_icon">
                     <p>Amethyst</p>
                 </div>
 
                 <div class="themewrapper">
-                    <img src="/public/colors/amber.png" alt="amber_icon">
+                    <img src="/colors/amber.png" alt="amber_icon">
                     <p>Amber</p>
                 </div>
 

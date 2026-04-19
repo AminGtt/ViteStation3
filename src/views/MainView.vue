@@ -27,8 +27,8 @@
 
     const navSound = new Audio(navSoundUrl);
 
-    let xmbMenu = '',
-        xmbCols = '',
+    let xmbMenu: any = null,
+        xmbCols: any = '',
         leftValMenu = 29,
         topValRow = 0;
 
@@ -37,13 +37,12 @@
         xmbCols = document.querySelectorAll('.xmb_col_body');
 
         xmbMenu.style.left = leftValMenu+'%';
-
-        return xmbMenu, xmbCols
     })
 
 
     function playNavSound() {
-        navSound.cloneNode(true).play();
+
+        (navSound.cloneNode(true) as HTMLAudioElement).play();
     }
 
     useEventListener(document.body, 'keydown', (e) => {
@@ -117,27 +116,27 @@
         console.log('close');
     }
 
-    function moveRows(sign, maxRowsForCurrentCol) {
-        if (sign == '-' && selectedIndexStore.selectedRowIndex < maxRowsForCurrentCol-1 ) {
-            document.querySelectorAll('.xmb_col')[selectedIndexStore.selectedColIndex].querySelectorAll('.xmb_row')[selectedIndexStore.selectedRowIndex].style.top = '-220px';
+    function moveRows(sign: '+' | '-', maxRowsForCurrentCol?: number) {
+        if (maxRowsForCurrentCol && sign == '-' && selectedIndexStore.selectedRowIndex < maxRowsForCurrentCol-1 ) {
+            (document.querySelectorAll('.xmb_col')[selectedIndexStore.selectedColIndex].querySelectorAll('.xmb_row')[selectedIndexStore.selectedRowIndex] as HTMLElement).style.top = '-220px';
             topValRow -= 110
         } else if (sign == '+' &&  selectedIndexStore.selectedRowIndex > 0 ) {
-            document.querySelectorAll('.xmb_col')[selectedIndexStore.selectedColIndex].querySelectorAll('.xmb_row')[selectedIndexStore.selectedRowIndex-1].style.top = '0px';
+            (document.querySelectorAll('.xmb_col')[selectedIndexStore.selectedColIndex].querySelectorAll('.xmb_row')[selectedIndexStore.selectedRowIndex-1] as HTMLElement).style.top = '0px';
             topValRow += 110
         }
 
         xmbCols[selectedIndexStore.selectedColIndex].style.top = topValRow+'px'
     }
 
-    function moveMenu(sign, maxCol) {
+    function moveMenu(sign: '+' | '-', maxCol?: number) {
         //console.log(document.querySelectorAll('.xmb_col')[selectedIndexStore.selectedColIndex].querySelectorAll('.xmb_row'));
         for (const row of document.querySelectorAll('.xmb_col')[selectedIndexStore.selectedColIndex].querySelectorAll('.xmb_row')){
-            row.style.top = '0px'
+            (row as HTMLElement).style.top = '0px'
         }
 
         topValRow = 0
 
-        if (sign == '-' && selectedIndexStore.selectedColIndex < maxCol-1) {
+        if (maxCol && sign == '-' && selectedIndexStore.selectedColIndex < maxCol-1) {
             leftValMenu -= 10;
         } else if (sign == '+' && selectedIndexStore.selectedColIndex > 0) {
             leftValMenu += 10
@@ -158,7 +157,6 @@
         <section id="xmb">
 
             <XmbColumn v-for="(col, index) in columnsStore.cols" :key="index" :wantedCol="col" :index="index"/>
-
         </section>
 
     </main>

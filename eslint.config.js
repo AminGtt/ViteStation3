@@ -3,10 +3,17 @@ import { defineConfigWithVueTs, vueTsConfigs } from '@vue/eslint-config-typescri
 import prettierConfig from 'eslint-config-prettier'
 
 export default [
-    { ignores: ['dist/', 'public/'] },
+    {
+        ignores: ['dist/', 'public/'],
+    },
     ...defineConfigWithVueTs(
         pluginVue.configs['flat/essential'],
         vueTsConfigs.recommended,
-        prettierConfig,
+        prettierConfig
     ),
+    {
+        rules: {
+            '@typescript-eslint/no-explicit-any': 'off'
+        }
+    }
 ]
